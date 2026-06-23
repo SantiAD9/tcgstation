@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TCG Station - Vending y Distribución de Cartas Oficiales</title>
+    
+    <!-- FAVICON (Icono de la pestaña usando el logo oficial) -->
+    <link rel="icon" type="image/png" href="TCG Station Logo.png">
+
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -22,9 +27,12 @@
 </head>
 <body class="bg-tcgDark text-gray-100 font-sans antialiased">
 
+    <!-- NAVBAR -->
     <nav class="border-b border-gray-800 bg-tcgDark/80 backdrop-blur-md fixed top-0 w-full z-50">
         <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-            <div class="flex items-center space-x-2">
+            <!-- LOGO E IMAGEN INTEGRADOS -->
+            <div class="flex items-center space-x-3">
+                <img src="TCG Station Logo.png" alt="TCG Station Logo" class="h-9 w-auto object-contain bg-white/10 p-1 rounded">
                 <span class="text-2xl font-black tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-tcgAccent to-tcgGold">TCG STATION</span>
             </div>
             <a href="#contacto" class="bg-tcgAccent hover:bg-blue-600 text-white px-5 py-2 rounded-lg font-medium transition duration-300 text-sm">
@@ -33,6 +41,7 @@
         </div>
     </nav>
 
+    <!-- HERO SECTION -->
     <section class="pt-32 pb-20 px-4 max-w-6xl mx-auto text-center relative overflow-hidden">
         <div class="absolute inset-0 bg-gradient-to-b from-blue-500/10 to-transparent blur-3xl -z-10 tracking-tight"></div>
         <span class="text-tcgGold font-semibold uppercase tracking-widest text-sm bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/20">Modelo Llave en Mano</span>
@@ -54,6 +63,7 @@
 
     <hr class="border-gray-800 max-w-6xl mx-auto">
 
+    <!-- PILARES / VENTAJAS -->
     <section id="ventajas" class="py-20 px-4 max-w-6xl mx-auto">
         <div class="text-center mb-16">
             <h2 class="text-3xl font-bold md:text-4xl">¿Por qué elegir TCG Station?</h2>
@@ -78,6 +88,7 @@
         </div>
     </section>
 
+    <!-- CATALOGO DE MODELOS -->
     <section id="modelos" class="py-20 bg-gray-950 px-4">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-16">
@@ -86,6 +97,7 @@
             </div>
             
             <div class="grid md:grid-cols-3 gap-8 items-stretch">
+                <!-- Modelo 1 -->
                 <div class="bg-tcgCard rounded-2xl border border-gray-800 p-8 flex flex-col justify-between relative overflow-hidden">
                     <div>
                         <span class="text-xs font-bold uppercase tracking-wider text-tcgAccent bg-blue-500/10 px-3 py-1 rounded-full">Espacios Reducidos</span>
@@ -101,6 +113,7 @@
                     <a href="#contacto" class="mt-8 block text-center bg-gray-800 hover:bg-gray-700 text-white font-medium py-3 rounded-xl transition duration-300">Solicitar Info</a>
                 </div>
 
+                <!-- Modelo 2 -->
                 <div class="bg-tcgCard rounded-2xl border-2 border-tcgAccent p-8 flex flex-col justify-between relative overflow-hidden transform md:-translate-y-4 shadow-xl shadow-blue-500/5">
                     <div class="absolute top-0 right-0 bg-tcgAccent text-white text-xs font-bold uppercase px-4 py-1 rounded-bl-xl">Más Equilibrado</div>
                     <div>
@@ -117,6 +130,7 @@
                     <a href="#contacto" class="mt-8 block text-center bg-tcgAccent hover:bg-blue-600 text-white font-semibold py-3 rounded-xl transition duration-300 shadow-md shadow-blue-500/20">El más vendido</a>
                 </div>
 
+                <!-- Modelo 3 -->
                 <div class="bg-tcgCard rounded-2xl border border-gray-800 p-8 flex flex-col justify-between relative overflow-hidden">
                     <div>
                         <span class="text-xs font-bold uppercase tracking-wider text-purple-400 bg-purple-500/10 px-3 py-1 rounded-full">Premium / Inversores</span>
@@ -135,6 +149,7 @@
         </div>
     </section>
 
+    <!-- CALCULO DE ROI -->
     <section id="roi" class="py-20 px-4 max-w-4xl mx-auto text-center">
         <div class="bg-gradient-to-r from-blue-950 to-slate-900 border border-gray-800 p-8 md:p-12 rounded-3xl">
             <h2 class="text-2xl md:text-3xl font-bold mb-4">Los números no mienten</h2>
@@ -155,6 +170,7 @@
         </div>
     </section>
 
+    <!-- FORMULARIO DE CONTACTO CONECTADO A FORMSPREE -->
     <section id="contacto" class="py-20 bg-gray-950 px-4">
         <div class="max-w-xl mx-auto">
             <div class="text-center mb-10">
@@ -162,24 +178,25 @@
                 <p class="text-gray-400 mt-2">Te enviamos el dossier técnico y opciones de viabilidad para tu zona</p>
             </div>
 
-            <form id="contactForm" class="space-y-6 bg-tcgCard p-8 rounded-2xl border border-gray-800">
+            <!-- El backend procesará los envíos redirigiéndolos a tu dominio thetcgstation.com -->
+            <form id="contactForm" action="https://formspree.io/f/xvondpzo" method="POST" class="space-y-6 bg-tcgCard p-8 rounded-2xl border border-gray-800">
                 <div>
                     <label class="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">Nombre completo</label>
-                    <input type="text" required class="w-full bg-tcgDark border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-tcgAccent transition">
+                    <input type="text" name="nombre" required class="w-full bg-tcgDark border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-tcgAccent transition">
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div>
                         <label class="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">Teléfono de contacto</label>
-                        <input type="tel" required class="w-full bg-tcgDark border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-tcgAccent transition">
+                        <input type="tel" name="telefono" required class="w-full bg-tcgDark border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-tcgAccent transition">
                     </div>
                     <div>
                         <label class="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">Provincia</label>
-                        <input type="text" required class="w-full bg-tcgDark border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-tcgAccent transition">
+                        <input type="text" name="provincia" required class="w-full bg-tcgDark border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-tcgAccent transition">
                     </div>
                 </div>
                 <div>
                     <label class="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">¿Dónde tienes pensado ubicar la máquina?</label>
-                    <select class="w-full bg-tcgDark border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-tcgAccent transition">
+                    <select name="ubicacion" class="w-full bg-tcgDark border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-tcgAccent transition">
                         <option>Tengo un local comercial propio (Papelería, Cómics, Kiosco...)</option>
                         <option>Tengo un local de Vending 24 horas</option>
                         <option>Quiero negociar un espacio (Centro comercial, cine, etc.)</option>
@@ -198,20 +215,33 @@
         </div>
     </section>
 
+    <!-- FOOTER -->
     <footer class="py-8 text-center text-xs text-gray-600 border-t border-gray-900">
         <p>&copy; 2026 TCG Station Soluciones Vending. Todos los derechos reservados.</p>
     </footer>
 
+    <!-- JS PARA PROCESAMIENTO ASÍNCRONO DEL FORMULARIO -->
     <script>
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault(); // Evita que recargue la página
+        const form = document.getElementById('contactForm');
+        const successBox = document.getElementById('successMessage');
+
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const formData = new FormData(this);
             
-            // Aquí en el futuro puedes meter un fetch() a tu API, a Make.com, o a Telegram
-            
-            // Ocultamos el formulario y mostramos el mensaje de éxito con una animación simple
-            this.classList.add('hidden');
-            const successBox = document.getElementById('successMessage');
-            successBox.classList.remove('hidden');
+            // Envío asíncrono a Formspree
+            const response = await fetch(this.action, {
+                method: this.method,
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+            });
+
+            if (response.ok) {
+                this.classList.add('hidden');
+                successBox.classList.remove('hidden');
+            } else {
+                alert('Hubo un problema al enviar el formulario. Por favor, inténtalo de nuevo.');
+            }
         });
     </script>
 </body>
